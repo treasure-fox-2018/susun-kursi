@@ -12,31 +12,36 @@
 
 function generateSeats(row) {
 	let seats = []
-	for(let i=0; i<rowa; i++) {
-		seat.push([])
+	for(let i=0; i<row; i++) { //'rowa' seharusnya 'row'
+		seats.push([]) //'seat' kurang 's' dibelakang
 	}
 	return seats
 }
 
 function managePerson(arr, rowSeats) {
-	let seats = generateSeat(rowSeats)
+	let seats = generateSeats(rowSeats) //'generateSeat' kurang 's' dibelakang
 	let row = 0
 
-	for(let i=0; i<arr.length-1; i++) {
-		seat[row].push(arr[i])
+	for(let i=0; i<=arr.length-1; i++) { //bila memakai arr.length-1 seharusnya juga memakai <=
+		
 		if(row <= 2) {
-			row++
+			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang dan dipindah ke dalam kondisi
+			// row++ //'row' baru ditambahkan setelah loop sesuai kondisi berjalan
 		} else {
-			row == 0
+			row = 0
+			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang dan dipindah ke dalam kondisi
 		}
+		row++ //letak 'row' yg baru
 	}
-	printSeats(seats)
+	return printSeats(seats)
 }
 
 function printSeats(seats) {
-	for(let i=1; i<seats.length; i++) {
-		console.log(`Baris ${i} : `, seats[i])
+	var hasil = '' // tambahan var hasil untuk me-return 
+	for(let i=0; i<seats.length; i++) { //seharusnya mulai dari 0
+		hasil += `Baris ${i} : [${seats[i]}] \n` //'console.log' diganti menjadi 'return' dan merubah sedikit format penulisan agar sesuai dg output yg diinginkan
 	}
+	return hasil
 }
 
-managePerson(['a','b','c','d','e','f','g','h','i','j'], 3)
+console.log(managePerson(['a','b','c','d','e','f','g','h','i','j'], 3))
