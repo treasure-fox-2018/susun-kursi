@@ -12,29 +12,28 @@
 
 function generateSeats(row) {
 	let seats = []
-	for(let i=0; i<rowa; i++) {
-		seat.push([])
+	for(let i=0; i<row; i++) { //was type used rowa
+		seats.push([]) //was typo used seat
 	}
 	return seats
 }
 
 function managePerson(arr, rowSeats) {
-	let seats = generateSeat(rowSeats)
-	let row = 0
-
-	for(let i=0; i<arr.length-1; i++) {
-		seat[row].push(arr[i])
-		if(row <= 2) {
-			row++
+	let seats = generateSeats(rowSeats) //function call name was wrong
+  let row = 0
+	for(let i=0; i<arr.length; i++) { //was arr.length-1
+    seats[row].push(arr[i]); //was seat
+		if(row < 2) { //was <=, this will make next row = 3
+			row++;
 		} else {
-			row == 0
+			row = 0; //== is not for assign value
 		}
 	}
 	printSeats(seats)
 }
 
 function printSeats(seats) {
-	for(let i=1; i<seats.length; i++) {
+	for(let i=0; i<seats.length; i++) { //was i=1, seats[0] not printed
 		console.log(`Baris ${i} : `, seats[i])
 	}
 }
