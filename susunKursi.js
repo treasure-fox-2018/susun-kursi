@@ -12,29 +12,29 @@
 
 function generateSeats(row) {
 	let seats = []
-	for(let i=0; i<rowa; i++) {
-		seat.push([])
+	for(let i = 0; i < row; i++) { //typo rowa seharusnya row
+		seats.push([]) //typo seat seharusnya seats
 	}
-	return seats
+	return seats;
 }
 
-function managePerson(arr, rowSeats) {
-	let seats = generateSeat(rowSeats)
+function managePerson(arr, rowSeats) { //arr = 9; rowSeats = 3;
+	let seats = generateSeats(rowSeats) //keluar [[],[],[]]
 	let row = 0
 
-	for(let i=0; i<arr.length-1; i++) {
-		seat[row].push(arr[i])
-		if(row <= 2) {
+	for(let i = 0; i < arr.length; i++) {
+		seats[row].push(arr[i])
+		if(row < 2) { //jika row <= 2 maka pada saat row === 2, row selanjutnya akan menjadi 3.. sedangkan seats hanya sampai 2(dimulai dari index 0);
 			row++
 		} else {
-			row == 0
+			row = 0 // jumlah '=' harus 1 untuk mereset row kembali menjadi 0
 		}
 	}
 	printSeats(seats)
 }
 
 function printSeats(seats) {
-	for(let i=1; i<seats.length; i++) {
+	for(let i = 0; i < seats.length; i++) { //jika dimulai dari 1, index seats yang pertama tidak terpanggil
 		console.log(`Baris ${i} : `, seats[i])
 	}
 }
