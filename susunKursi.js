@@ -33,7 +33,7 @@ function managePerson(arr, rowSeats) {
 			seats[row].push(arr[i]); //seats[row].push(arr[i]) berada disini juga, agar setelah nilai row dikembalikan ke 0, pada looping yang sama dimasukkan nilai yang selanjutnya
 		}
 		row++; // row++ dipindah agar penambahan variabel row terjadi sebelum masuk ke looping selanjutnya.
-		debugger
+		debugger;
 	}
 	printSeats(seats)
 }
