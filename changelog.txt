@@ -1,0 +1,11 @@
+May 29th:
+1.typo fixed
+2.typo fixed
+3.typo fixed
+4.typo fixed
+5.changed i=1 to i=0
+6.moved array push inside if condition
+7.moved row increment out of if condition
+8.change from compare to declare
+9.changed from length -1 to length
+10.added array push inside else condition
