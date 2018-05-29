@@ -25,11 +25,11 @@ function managePerson(arr, rowSeats) {
 	for(let i=0; i<=arr.length-1; i++) { //bila memakai arr.length-1 seharusnya juga memakai <=
 		
 		if(row <= 2) {
-			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang
+			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang dan dipindah ke dalam kondisi
 			// row++ //'row' baru ditambahkan setelah loop sesuai kondisi berjalan
 		} else {
 			row = 0
-			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang
+			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang dan dipindah ke dalam kondisi
 		}
 		row++ //letak 'row' yg baru
 	}
