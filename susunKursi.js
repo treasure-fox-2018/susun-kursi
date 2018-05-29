@@ -12,29 +12,50 @@
 
 function generateSeats(row) {
 	let seats = []
-	for(let i=0; i<rowa; i++) {
-		seat.push([])
+	// for(let i=0; i<rowa; i++) {
+	// 	seat.push([])
+	// }
+
+	// yg benernya
+	for (let i = 0; i < row; i++) { // bukan rowa
+		seats.push([]) // bukan seat
 	}
 	return seats
 }
 
 function managePerson(arr, rowSeats) {
-	let seats = generateSeat(rowSeats)
+	//let seats = generateSeat(rowSeats)
+	let seats = generateSeats(rowSeats) // kurang s di generateSeat
 	let row = 0
 
-	for(let i=0; i<arr.length-1; i++) {
-		seat[row].push(arr[i])
-		if(row <= 2) {
+	// for(let i=0; i<arr.length-1; i++) {
+	// 	seat[row].push(arr[i])
+	// 	if(row <= 2) {
+	// 		row++
+	// 	} else {
+	// 		row == 0
+	// 	}
+	// }
+
+	// yg bener
+	for (let i = 0; i < arr.length; i++) { // kalo arr.length-1 tar yg j gak keikut
+		seats[row].push(arr[i])
+		if (row < 2) { // kalo row <=2 tar rownya 
 			row++
 		} else {
-			row == 0
+			row = 0 // pas seats udah punya gini [[a,...],[b,....],[c,....]] untuk isi d ke seats[0] harus di 0 in
 		}
 	}
 	printSeats(seats)
 }
 
 function printSeats(seats) {
-	for(let i=1; i<seats.length; i++) {
+	// for(let i=1; i<seats.length; i++) {
+	// 	console.log(`Baris ${i} : `, seats[i])
+	// }
+
+	// yg bener
+	for (let i = 0; i < seats.length; i++) { // kalo i nya start dari 1, tar index yg 0 gak kepanggil
 		console.log(`Baris ${i} : `, seats[i])
 	}
 }
