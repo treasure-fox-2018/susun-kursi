@@ -28,7 +28,7 @@ function managePerson(arr, rowSeats) {
 			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang dan dipindah ke dalam kondisi
 			// row++ //'row' baru ditambahkan setelah loop sesuai kondisi berjalan
 		} else {
-			row = 0
+			row = 0 //ubah dari compare value menjadi assign value
 			seats[row].push(arr[i]) //'seat' kurang 's' dibelakang dan dipindah ke dalam kondisi
 		}
 		row++ //letak 'row' yg baru
